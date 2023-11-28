@@ -8,6 +8,7 @@ function reconcileSingleElement(
 	currentFiber: FiberNode | null,
 	element: ReactElementType
 ) {
+	console.log(currentFiber);
 	// 根据element创建fiber
 	const fiber = createFiberFromElement(element);
 	fiber.return = returnFiber;
@@ -18,6 +19,7 @@ function reconcileSingleTextNode(
 	currentFiber: FiberNode | null,
 	content: string | number
 ) {
+	console.log(currentFiber);
 	// 根据element创建fiber
 	const fiber = new FiberNode(HostText, { content }, null);
 	fiber.return = returnFiber;

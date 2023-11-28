@@ -15,6 +15,9 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"skipLibCheck": true,
-		"baseUrl": "./packages"
+		"baseUrl": "./packages",
+		"paths": {
+			"hostConfig": ["./react-dom/src/hostConfig.ts"]
+		}
 	}
 }
