@@ -1,3 +1,4 @@
+import { Dispatch } from 'react/src/currentDispatcher';
 import { Action } from 'shared/ReactTypes';
 // 代表更新的数据结构 Update
 export interface Update<State> {
@@ -7,6 +8,7 @@ export interface UpdateQueue<State> {
 	shared: {
 		pending: Update<State> | null;
 	};
+	dispatch: Dispatch<State> | null;
 }
 export const createUpdate = <State>(action: Action<State>): Update<State> => {
 	return {
@@ -17,7 +19,8 @@ export const createUpdateQueue = <State>(): UpdateQueue<State> => {
 	return {
 		shared: {
 			pending: null
-		}
+		},
+		dispatch: null
 	};
 };
 // 在updateQueue中添加update
